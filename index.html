@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Takip Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ürün Takip Sistemi</h1>
+        
+        <!-- Ürün Ekleme Formu -->
+        <div class="form-section">
+            <h2>Ürün Ekle</h2>
+            <form id="urunForm">
+                <div class="form-group">
+                    <label for="urunAd">Ürün Adı:</label>
+                    <input type="text" id="urunAd" required>
+                </div>
+                <div class="form-group">
+                    <label for="urunFiyat">Fiyat:</label>
+                    <input type="number" id="urunFiyat" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="urunAdet">Adet:</label>
+                    <input type="number" id="urunAdet" min="1" required>
+                </div>
+                <button type="submit">Ürün Ekle</button>
+            </form>
+        </div>
+
+        <!-- Toplam Stok Değeri -->
+        <div class="total-section">
+            <h2>Toplam Stok Değeri: <span id="toplamDeger">0.00</span> TL</h2>
+        </div>
+
+        <!-- Ürün Listesi -->
+        <div class="table-section">
+            <h2>Ürün Listesi</h2>
+            <table id="urunTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Ürün Adı</th>
+                        <th>Fiyat</th>
+                        <th>Adet</th>
+                        <th>Toplam</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="urunListesi">
+                    <!-- Ürünler buraya eklenecek -->
+                </tbody>
+            </table>
+            <div id="bosMesaj" class="empty-message">
+                Henüz ürün eklenmedi.
+            </div>
+        </div>
+
+        <!-- Düzenleme Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Ürün Düzenle</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editIndex">
+                    <div class="form-group">
+                        <label for="editAd">Ürün Adı:</label>
+                        <input type="text" id="editAd" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editFiyat">Fiyat:</label>
+                        <input type="number" id="editFiyat" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAdet">Adet:</label>
+                        <input type="number" id="editAdet" min="1" required>
+                    </div>
+                    <button type="submit">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
