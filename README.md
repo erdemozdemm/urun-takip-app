@@ -19,4 +19,4 @@ Bu proje basit bir ürün takip sistemidir.
 Terminalde:
 
 ```bash
-python3 -m http.server 3000
+python3 -m http.server 8000
